@@ -4,19 +4,27 @@ import Vue from 'vue'
 import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
-import Home from './components/HelloFromVux'
+import routes from './router'
+// import Home from './components/HelloFromVux'
+import {
+  Group,
+  LoadingPlugin,
+  ToastPlugin,
+  XButton,
+  XInput
+} from 'vux'
+// 注册全局组件
+Vue.component('x-input', XInput)
+Vue.component('group', Group)
+Vue.component('x-button', XButton)
 
+Vue.use(LoadingPlugin)
 Vue.use(VueRouter)
-
-const routes = [{
-  path: '/',
-  component: Home
-}]
+Vue.use(ToastPlugin)
 
 const router = new VueRouter({
-  routes
+  routes: routes
 })
-
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false
