@@ -30,9 +30,10 @@ export default {
     }
   },
   computed:{
-    ...mapGetters('login',['isLogin','loginName'])
+    ...mapGetters('login',['token'])
   },
   methods: {
+    ...mapMutations('login',['login']),
     login () {
       var self = this
       // let username = this.username
@@ -42,7 +43,8 @@ export default {
       })
       setTimeout(() => {
         self.$vux.loading.hide()
-
+        self.login('Corner')
+        // self.$store.commit('set_login2');
         self.$router.push({name: 'index'})
       }, 2000)
     }

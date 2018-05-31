@@ -12,7 +12,7 @@
 
 <script>
 import { Group, Cell } from 'vux'
-
+import { mapGetters } from 'vuex'
 export default {
   components: {
     Group,
@@ -22,16 +22,8 @@ export default {
     return {
     }
   },
-  computed:{
-    ...mapGetters('login',['isLogin', 'loginName'])
-  },
-  methods: {
-
-  },
-  created: {
-    if (isLogin) {
-      this.$router.push({name: 'login'})
-    }
+  computed: {
+    ...mapGetters('login', ['isLogin', 'loginName'])
   }
 }
 </script>

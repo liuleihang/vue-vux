@@ -26,7 +26,10 @@ const routes = [
   {
     path: '/',
     name: 'index',
-    component: index
+    component: index,
+    meta: {
+      requireAuth: true
+    }
   },
   {
     path: '/login',

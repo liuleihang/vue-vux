@@ -1,25 +1,21 @@
-const login = {
+import * as types from '../types'
+
+export default {
   namespaced: true,
   state: {
-    isLogin: '',
-    loginName: ''
+    user: {},
+    token: null
   },
   getters: {
-    isLogin: state => {
-      return state.isLogin
-    },
-    loginName: state => {
-      return state.loginName
+    [types.LOGIN]: state => {
+      return state.token
     }
   },
   mutations: {
-    set_isLogin (state, val) {
-      state.isLogin = val
-    },
-    set_loginName (state, val) {
-      state.loginName = val
+    [types.LOGIN] (state, val) {
+      localStorage.token = val
+      state.token = val
     }
   },
   actions: {}
 }
-export default login
