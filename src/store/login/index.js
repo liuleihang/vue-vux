@@ -1,4 +1,4 @@
-import * as types from '../types'
+// import * as types from '../types'
 
 export default {
   namespaced: true,
@@ -7,12 +7,12 @@ export default {
     token: null
   },
   getters: {
-    [types.LOGIN]: state => {
+    token: state => {
       return state.token
     }
   },
   mutations: {
-    [types.LOGIN] (state, val) {
+    setToken (state, val) {
       localStorage.token = val
       state.token = val
     }

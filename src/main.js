@@ -49,7 +49,7 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  // store,
+  store,
   router,
   render: h => h(App)
 }).$mount('#app-box')

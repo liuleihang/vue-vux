@@ -20,7 +20,7 @@
 </template>
 
 <script>
-
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   components: {},
   data () {
@@ -29,7 +29,11 @@ export default {
       password: ''
     }
   },
+  computed: {
+    ...mapGetters('login', ['token'])
+  },
   methods: {
+    ...mapMutations('login', ['setToken']),
     login () {
       var self = this
       // let username = this.username
@@ -39,7 +43,7 @@ export default {
       })
       setTimeout(() => {
         self.$vux.loading.hide()
-
+        self.setToken('true')
         self.$router.push({name: 'index'})
       }, 2000)
     }

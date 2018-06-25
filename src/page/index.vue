@@ -23,7 +23,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('login', ['isLogin', 'loginName'])
+    ...mapGetters('login', ['login'])
   }
 }
 </script>

@@ -30,10 +30,10 @@ export default {
     }
   },
   computed:{
-    ...mapGetters('login',['token'])
+     ...mapGetters('login',['token'])
   },
   methods: {
-    ...mapMutations('login',['login']),
+    // ...mapMutations('login',['login']),
     login () {
       var self = this
       // let username = this.username
